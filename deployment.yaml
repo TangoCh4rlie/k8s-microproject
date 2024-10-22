@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-microproject-deployment
+spec:
+  selector:
+    matchLabels:
+      app: microproject
+  template:
+    metadata:
+      labels:
+        app: microproject
+    spec:
+      containers:
+        - name: microprojectcontainer
+          image: tang0ch4rlie/k8s-microproject
