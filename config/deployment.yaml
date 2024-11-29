@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-microproject-deployment
+  namespace: virtu
+spec:
+  selector:
+    matchLabels:
+      app: microproject
+  template:
+    metadata:
+      labels:
+        app: microproject
+    spec:
+      containers:
+        - name: microprojectcontainer
+          image: tang0ch4rlie/k8s-microproject
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 3
+            periodSeconds: 3
+          volumeMounts:
+            - mountPath: /var/log
+              name: log
+          envFrom:
+            - configMapRef:
+                name: k8s-microproject-secret
+      volumes:
+        - name: log
+          persistentVolumeClaim:
+            claimName: k8s-microproject-log-pvc
