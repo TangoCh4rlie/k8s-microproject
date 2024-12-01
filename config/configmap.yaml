@@ -4,4 +4,4 @@ metadata:
   name: k8s-microproject-secret
   namespace: virtu
 data:
-  TEST_VALUE: "test"
+  USER_NAME: "test"

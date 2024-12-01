@@ -22,7 +22,7 @@ spec:
             initialDelaySeconds: 3
             periodSeconds: 3
           volumeMounts:
-            - mountPath: /var/log
+            - mountPath: /app
               name: log
           envFrom:
             - configMapRef:
