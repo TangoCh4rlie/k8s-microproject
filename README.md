@@ -186,4 +186,12 @@ curl --resolve "<ingress-host>:80:<ingress-address>" -i http://<ingress-host>/
 
 Allez sur https://microproject.com/ pour acceder au site. Vous deverez y trouver "Hello, test", si vous allez dans le pod vous devire trouver le fichier out.log avec le contenu "Hello, test!".
 
-
+features : 
+- deployment
+- service
+- ingress
+- persistent-volume
+- https
+- configmap
+- StatefulSet deployment
+- livenessProbe
