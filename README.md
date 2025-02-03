@@ -1,3 +1,26 @@
+# Installation
+- Démarer minikube
+- activer l'add-on ingress `minikube addons enable ingress`
+- créer le namespace virtu `kubectl create namespace virtu`
+- déployer la configmap `kubectl apply -f configmap.yaml`
+- déployer le persistent-volume `kubectl apply -f persistent-volume.yaml`
+- déployer le persistent-volume-claim `kubectl apply -f persistent-volume.yaml`
+- déployer le deployment `kubectl apply -f deployment.yaml`
+- déployer le service `kubectl apply -f services.yaml`
+- déployer l'ingress `kubectl apply -f ingress.yaml`
+
+Allez sur https://microproject.com/ pour acceder au site. Vous deverez y trouver "Hello, test", si vous allez dans le pod vous devire trouver le fichier out.log avec le contenu "Hello, test!".
+
+features : 
+- deployment
+- service
+- ingress
+- persistent-volume
+- https
+- configmap
+- StatefulSet deployment
+- livenessProbe
+
 ## Steps
 
 ### Part 1
@@ -171,27 +194,3 @@ curl --resolve "<ingress-host>:80:<ingress-address>" -i http://<ingress-host>/
 - Your application is deployed using a StatefulSet
 - A ConfigMap is used to pass any environment variables needed by your application
 
-
-
-# Installation
-- Démarer minikube
-- activer l'add-on ingress `minikube addons enable ingress`
-- créer le namespace virtu `kubectl create namespace virtu`
-- déployer la configmap `kubectl apply -f configmap.yaml`
-- déployer le persistent-volume `kubectl apply -f persistent-volume.yaml`
-- déployer le persistent-volume-claim `kubectl apply -f persistent-volume.yaml`
-- déployer le deployment `kubectl apply -f deployment.yaml`
-- déployer le service `kubectl apply -f services.yaml`
-- déployer l'ingress `kubectl apply -f ingress.yaml`
-
-Allez sur https://microproject.com/ pour acceder au site. Vous deverez y trouver "Hello, test", si vous allez dans le pod vous devire trouver le fichier out.log avec le contenu "Hello, test!".
-
-features : 
-- deployment
-- service
-- ingress
-- persistent-volume
-- https
-- configmap
-- StatefulSet deployment
-- livenessProbe
