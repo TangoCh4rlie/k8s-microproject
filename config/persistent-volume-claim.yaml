@@ -1,14 +1,12 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: k8s-microproject-log-pvc
+  name: microproject-pvc
   namespace: virtu
-  labels:
-    app: app
 spec:
-  storageClassName: manual
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 2Gi
+      storage: 10Gi
+  storageClassName: manual

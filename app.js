@@ -5,7 +5,7 @@ const port = 3000;
 const fs = require("node:fs");
 
 app.get("/", (req, res) => {
-  res.send("Hello, Kubernetes!");
+  res.send(`Hello, ${process.env.USER_NAME}`);
   const name = process.env.USER_NAME || "name unset";
   const content = `Hello, ${name}! \n`;
   fs.writeFile("./out.log", content, (err) => {
